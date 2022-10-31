@@ -14,7 +14,7 @@ NVC++/x86-64 Linux 22.7-0: compilation aborted
 
 ## NVHPC 22.9
 
-Compile error regardless of ```-DCUDA_EIGEN_KERNEL``` value
+Compile error regardless of ```-DCUDA_EIGEN_KERNEL``` value with ```C++ standard``` >= 14. With c++11, we get the same error as nvhpc 22.7, 
 
 ```
 /opt/nvidia/hpc_sdk/Linux_x86_64/22.9/compilers/bin/nvc++ -DCUDA_EIGEN_KERNEL -isystem /usr/local/include/eigen3 -O0 -cuda -gpu=managed -stdpar --c++17 --gnu_extensions -MD -MT CMakeFiles/compile_error_demo.dir/eigen_nvhpc.cc.o -MF CMakeFiles/compile_error_demo.dir/eigen_nvhpc.cc.o.d -o CMakeFiles/compile_error_demo.dir/eigen_nvhpc.cc.o -c /home/esseivaj/bld4/devel/eigen_nvhpc/eigen_nvhpc.cc
