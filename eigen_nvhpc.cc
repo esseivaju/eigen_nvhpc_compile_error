@@ -32,7 +32,10 @@ bool isEqualFuzzy(C1 a, C2 b, double epsilon = 1e-6) {
   return true;
 }
 
-__host__ __device__ void eigenValues(Matrix3d *m, Eigen::SelfAdjointEigenSolver<Matrix3d>::RealVectorType *ret) {
+#ifdef __CUDACC__
+__host__ __device__
+#endif
+void eigenValues(Matrix3d *m, Eigen::SelfAdjointEigenSolver<Matrix3d>::RealVectorType *ret) {
 #if TEST_DEBUG
   printf("Matrix(0,0): %f\n", (*m)(0, 0));
   printf("Matrix(1,1): %f\n", (*m)(1, 1));
